@@ -1,0 +1,40 @@
+The encoding of the end result from the evaluation module, classification, and rank module
+
+Hand Classification information
+1	High Card	0.501177	1302540
+2	Single Pair	0.42256900000	1098240
+3	Two Pair	0.04753900000	123552
+4	Triple	0.02112850000	54912
+5	Straight	0.00392465000	10200
+6	Flush	0.00196540000	5108
+7	Full House	0.00144058000	3744
+8	Four of a Kind	0.00024009600	624
+9	Straight Flush	0.00001539078	40
+
+
+Hand Rank information (excluding the special case of a baby straight, 5, 4, 3, 2, Ace, straight where 5 is the high card)
+
+2	2
+3	3
+4	4
+5	5
+6	6
+7	7
+8	8
+9	9
+10	10
+11	Jack
+12	Queen
+13	King
+14	Ace
+
+
+A hand that consisted of 2h 3h 7c 5d Qc
+Would be classified and ranked as
+1 12
+High card	Queen
+if there was a second high card in the case of two pair or a full house an additional value is recorded
+6h 6d 6c kd kh
+would be classified and ranked as
+7 6 13
+Full house	6	king
