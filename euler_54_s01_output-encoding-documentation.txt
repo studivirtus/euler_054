@@ -31,10 +31,11 @@ Hand Rank information (excluding the special case of a baby straight, 5, 4, 3, 2
 
 A hand that consisted of 2h 3h 7c 5d Qc
 Would be classified and ranked as
-1 12
 High card	Queen
+1			12
+
 if there was a second high card in the case of two pair or a full house an additional value is recorded
 6h 6d 6c kd kh
 would be classified and ranked as
-7 6 13
 Full house	6	king
+7 			6 	13
