@@ -23,22 +23,54 @@ def fileImporter():
 				handTwo.append(makeList(col))
 				#print ("handTwo: ", handTwo)#DEBUG
 			counter += 1
+		
+		#sort the lists in reverse order
+		handOne.sort(reverse = True)
+		handTwo.sort(reverse = True)
+		
 		#put each properly grouped hand into the correct group of hands.
 		handOneList.append(handOne)
 		handTwoList.append(handTwo)
 	csvFile.close()
 
-	#for row in handOneList:
-		#print (row)#DEBUG
+	for row in handOneList:
+		print (row)#DEBUG
 	print("#####################################")
 	#for row in handTwoList:
 		#print (row)#DEBUG
+		
+def numerize(str):
+#Takes a string and makes into an int that will sort better instead of the
+#mixed alpha numeric card encoding from the file.
+	if is_int(str):
+		return(int(str))
+	elif str == 'T':
+		return 10
+	elif str == 'J':
+		return 11
+	elif str == 'Q':
+		return 12
+	elif str == 'K':
+		return 13
+	elif str == 'A':
+		return 14
+
+def is_int(i):
+#modified form of:
+#https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float
+#Changes strings to ints
+    try:
+        int(i)
+        return True
+    except ValueError:
+        return False
 
 def makeList(str):
 #Helper Function: fileImporter
-#Takes a string and creates an indexable list
+#Takes a string and creates an indexable list and makes the first string analysis
+#integer
 	list = []
-	list.append(str[0])
+	list.append(numerize(str[0]))
 	list.append(str[1])
 	return list
 
